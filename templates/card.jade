@@ -1,0 +1,7 @@
+mixin card(href, title, content, img)
+  a.card(href=href)
+    if img
+      .card-bg(style="background-image:url('#{img}')")
+        .effects
+    h1= title
+    .card-content !{content}

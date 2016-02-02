@@ -1,0 +1,19 @@
+extends ./layout.jade
+
+block main
+  article
+    if page.metadata.links
+      .links
+        | Links:
+        ul
+          each url, name in page.metadata.links
+            li
+              a(href=url)= name
+    .article
+      != page.html
+      if page.metadata.links
+        h2 Links
+        ul
+          each url, name in page.metadata.links
+            li
+              a(href=url)= name

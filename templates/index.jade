@@ -1,0 +1,11 @@
+extends ./layout.jade
+
+block content
+  .main.home
+    table
+      each val, prop in page.metadata.props
+        tr
+          th #{prop}:
+          td !{val}
+    include ./sidebar.jade
+    include ./footer.jade

@@ -1,0 +1,14 @@
+aside.sidebar.card
+  h1 Links
+  .sidebar-content
+    nav.sidebar-links
+      ul
+        each url, name in locals.links
+          unless url === page.url
+            li
+              a(href=url)= name
+    .sidebar-socials
+      ul
+        each url, name in locals.socials
+          li
+            a(href=url)= name

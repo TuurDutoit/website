@@ -1,0 +1,11 @@
+{
+  "title": "Home",
+  "template": "index.jade",
+  "props": {
+    "Name": "Tuur Dutoit",
+    "Age": 18,
+    "Date of birth": "01 apr. 1997",
+    "Nationality": "Belgian (Leuven)",
+    "Languages": "Dutch, French, English<br />HTML, CSS, JavaScript"
+  }
+}

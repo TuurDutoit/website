@@ -1,0 +1,5 @@
+{
+  "title": "Projects",
+  "template": "cards-for-dir.jade",
+  "dir": "projects"
+}

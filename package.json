@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "wintersmith-autoprefixer-less": "0.0.1"
+  },
+  "private": "true"
+}
