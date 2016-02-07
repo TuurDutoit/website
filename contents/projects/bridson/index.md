@@ -18,6 +18,8 @@ I'm not going to explain how it works, because Mike Bostock can do that much bet
 ## How it works
 Basically, you give bridson a shape to work inside and a minimum distance between points, and it returns a distribution. That would be the basic workflow, but, of course, this module is much more flexible than that and can be customized a great deal. Let's go over some options!
 
+> __Note:__ *You can find more technical docs on [GitHub]*
+
 ### Points
 But first, a note on points. In bridson, points are simply represented by two-element arrays: `[x, y]` is a point at (x, y). An array of points is thus an array of two-element arrays: `[[x1, y1], [x2, y2]]` is an array of two points at (x1, y1) and (x2, y2), respectively.
 
@@ -35,4 +37,17 @@ Then specify either the opposite corner in `options.max` (as a point) or the wid
 > __Note:__ *`max` takes precedence over `width` and `height`.*
 
 #### Custom shape
-If a rectangle dosn"t work for you, you can specify a custom shape. This is achieved with just one options: `isInside`. This should be a function that takes two arguments, `x` and `y`, and returns a boolean indicating whether the point at (x, y) is inside your shape. It's as simple as that.
+If a rectangle doesn't work for you, you can specify a custom shape. This is achieved with just one options: `isInside`. This should be a function that takes two arguments, `x` and `y`, and returns a boolean indicating whether the point at (x, y) is inside your shape. It's as simple as that.
+
+When using a custom shape, don't forget to specify a starting point (or more. Look further down for more details); as cool as it is that bridson works with custom shapes, unfortunately, it cannot choose a starting point by itself.
+
+### Starting point(s)
+Set `options.start` to a point or array of points and bridson will use these as the active points when starting. If you don't specify a starting point, bridson will choose a random one itself, but it can only do that when using a rectangle; it cannot do this when using a custom shape.
+
+What you can do however, is using a custom shape __and__ specifying a rectangle that is completely inside your shape; this will cause bridson to use the shape in the algorithm, but it will choose a random starting point inside the rectangle.
+
+### Other options
+A few more options are available, like `padding` when using a rectangle, `iterations` to control whether or not to track the amount of iterations performed and `candidates` to control the amount of candidates generated in each iteration. Check the technical docs on [GitHub] for more info.
+
+
+[GitHub]: https://github.com/TuurDutoit/bridson

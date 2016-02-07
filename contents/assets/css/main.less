@@ -20,8 +20,6 @@ body {
 }
 
 .page {
-  position: relative;
-  width: 960px;
   margin: 50px auto;
 }
 
@@ -54,7 +52,7 @@ a {
   position: relative;
   display: block;
   width: 250px;
-  padding: 13px 10px;
+  padding: 22px 19px;
   border: 1px solid @light-grey;
   border-radius: 3px;
   box-shadow: @card-shadow-inset, @card-shadow-bottom;
@@ -151,6 +149,7 @@ a {
 
 
 .sidebar {
+  padding: 13px 10px;
   box-shadow: @card-shadow-inset, @card-shadow-bottom !important;
   
   h1 {
@@ -297,13 +296,16 @@ footer {
 .article img {
   &:extend(.card);
   box-sizing: border-box;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 325px;
   padding: 3px;
 }
 
 .article code {
   &:extend(.card);
   display: inline;
+  width: auto;
   padding: 2px 3px;
   font-family: @code-font;
   font-style: normal;
@@ -314,8 +316,9 @@ footer {
 }
 
 .article pre code {
-  display: block;
+  display: inline-block;
   padding: 13px 10px;
+  line-height: 1.4em;
 }
 
 .article blockquote {
@@ -359,13 +362,18 @@ footer {
 
 
 
-@media (min-width: 960px) {
+@media (min-width: 1035px) {
   html {
     font-size: 10px;
   }
+
+  .page {
+    position: relative;
+    width: 985px;
+  }
   
   .content {
-    width: 560px;
+    width: 600px;
   }
   
   .sidebar {
@@ -381,7 +389,11 @@ footer {
 }
 
 
-@media (max-width: 959px) {
+@media (max-width: 1034px) {
+  html {
+    font-size: 10px;
+  }
+
   .page {
     box-sizing: border-box;
     width: 100%;
@@ -390,7 +402,7 @@ footer {
 
   .content {
     width: 100%;
-    max-width: 560px;
+    max-width: 600px;
   }
   
   .sidebar {
@@ -409,7 +421,11 @@ footer {
 }
 
 
-@media (max-width: 593px) {
+@media (max-width: 640px) {
+  html {
+    font-size: 10px;
+  }
+
   .content-cards {
     width: 360px;
     margin: 0 auto;
