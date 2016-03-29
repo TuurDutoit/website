@@ -6,9 +6,9 @@ block page
     .main.cards
       - var dirname = page.metadata.dir
       each files, name in contents[dirname]
-        unless name === "index.json"
-          - var dir = name + "/"
-          - var article = files["index.md"]
+        - var dir = name + "/"
+        - var article = files["index.md"]
+        if article
           - var intro = article.metadata.intro || article.intro
           - var img = article.metadata.img;
           - var image = img ? dir+img : (files["preview.jpg"] && dir+"preview.jpg")

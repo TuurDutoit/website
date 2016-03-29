@@ -12,10 +12,12 @@
     },
     "socials": {
       "GitHub": "https://github.com/TuurDutoit",
+      "Twitter": "https://twitter.com/ArthurMansard",
       "Google+": "https://plus.google.com/+TuurDutoit",
       "Mail": "mailto:me@tuurdutoit.be"
     }
   },
+  "ignore": ["**/.DS_Store", "**/_*"],
   "plugins": [
     "wintersmith-autoprefixer-less"
   ],
