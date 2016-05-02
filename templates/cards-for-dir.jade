@@ -11,7 +11,7 @@ block page
         if article
           - var intro = article.metadata.intro || article.intro
           - var img = article.metadata.img;
-          - var image = img ? dir+img : (files["preview.jpg"] && dir+"preview.jpg")
+          - var image = img ? dir+img : (files["preview.jpg"] && dir+"preview@xs.jpg")
           +card(name, article.title, intro, image)
     include ./sidebar.jade
     include ./footer.jade

@@ -33,7 +33,7 @@ a {
   color: @grey;
   text-decoration: none;
   transition: all .1s;
-  
+
   &:hover {
     border-bottom-color: @grey;
   }
@@ -59,18 +59,18 @@ a {
   outline: none;
   overflow: hidden;
   transition: box-shadow .1s;
-  
+
   h1 {
     margin-bottom: 10px;
     font-size: @l-font-size;
     font-weight: bold;
   }
-  
+
   .card-content {
     margin: 0 7px;
     line-height: 1.2em;
   }
-  
+
   .card-bg {
     position: absolute;
     top: 3px;
@@ -81,7 +81,7 @@ a {
     background-position: center center;
     background-size: cover;
     transition: transform .1s;
-    
+
     .effects {
       width: 100%;
       height: 100%;
@@ -89,11 +89,11 @@ a {
       opacity: .8;
     }
   }
-  
+
   &:hover {
     box-shadow: @card-shadow-inset, @card-shadow-around;
     border-bottom-color: @light-grey;
-    
+
     .card-bg {
       transform: scale(1.2, 1.2);
     }
@@ -106,7 +106,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-right: -10px;
-  
+
   .card {
     margin-right: 10px;
     margin-bottom: 17px;
@@ -151,7 +151,7 @@ a {
 .sidebar {
   padding: 13px 10px;
   box-shadow: @card-shadow-inset, @card-shadow-bottom !important;
-  
+
   h1 {
     margin-bottom: 10px;
     padding-bottom: 10px;
@@ -160,7 +160,7 @@ a {
     font-weight: normal;
     border-bottom: 1px dotted @xlight-grey;
   }
-  
+
   a {
     display: inline-block;
     margin: 7px 7px 6px 7px;
@@ -196,18 +196,18 @@ footer {
 .home {
   width: 360px;
   margin: 0 auto;
-  
+
   table {
     width: inherit;
     font-size: @l-font-size;
   }
-  
+
   th {
     text-align: left;
     font-weight: bold;
     line-height: 2em;
   }
-  
+
   td {
     text-align: right;
     line-height: 1.75em;
@@ -287,7 +287,7 @@ footer {
 
 .article a {
   color: @red;
-  
+
   &:hover {
     color: @grey;
   }
@@ -299,7 +299,15 @@ footer {
   width: auto;
   max-width: 100%;
   max-height: 325px;
+  margin-bottom: 30px;
   padding: 3px;
+}
+
+.article img + em {
+  position: relative;
+  top: -25px;
+  display: inline-block;
+  margin-left: 5px;
 }
 
 .article code {
@@ -333,19 +341,19 @@ footer {
     display: inline-block;
     margin-left: 5px;
   }
-  
+
   li {
     display: inline-block;
     margin-left: 10px;
-    
+
     &:first-child {
       margin-left: 0;
     }
   }
-  
+
   a {
     color: @m-grey;
-    
+
     &:hover {
       color: @grey;
     }
@@ -371,18 +379,18 @@ footer {
     position: relative;
     width: 985px;
   }
-  
+
   .content {
     width: 600px;
   }
-  
+
   .sidebar {
     position: absolute;
     right: 0;
     top: 0;
     width: 150px;
   }
-  
+
   .sidebar-links {
     margin-bottom: 20px;
   }
@@ -404,16 +412,16 @@ footer {
     width: 100%;
     max-width: 600px;
   }
-  
+
   .sidebar {
     width: 280px;
     margin: 40px auto 0 auto;
   }
-  
+
   .sidebar-content {
     display: flex;
     flex-direction: row;
-    
+
     & > * {
       width: 140px;
     }
@@ -430,18 +438,54 @@ footer {
     width: 360px;
     margin: 0 auto;
   }
-  
+
   .cards {
     flex-direction: column;
     align-items: center;
     margin: 0;
+
+    .card {
+      margin-right: 0;
+    }
   }
-  
-  .card {
-    margin-right: 0;
-  }
-  
+
   .sidebar {
     margin: 40px auto 0 auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .content, .main {
+    width: 100%;
+  }
+
+  .home tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home tr + tr {
+    margin-top: 20px;
+  }
+
+  .home th, .home td {
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .cards .card {
+    margin-right: 0;
+  }
+
+  .sidebar-content {
+    flex-direction: column;
+  }
+
+  .sidebar-links {
+    margin-bottom: 20px;
   }
 }

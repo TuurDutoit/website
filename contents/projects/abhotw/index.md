@@ -2,9 +2,9 @@
 title: A Brief History Of The Web
 template: article.jade
 intro: An interactive presentation, depicting the history of communication and the Web, with lots of extra info and images.
-img: home.jpg
+img: home@xs.jpg
 links:
-  Live website: http://abriefhistoryoftheweb.com
+  Live website: http://tuurdutoit.be/abhotw
   GitHub: https://github.com/TuurDutoit/abriefhistoryoftheweb
 ---
 

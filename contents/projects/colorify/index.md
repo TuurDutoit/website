@@ -3,7 +3,7 @@ title: colorify
 template: article.jade
 intro: Turning text into colors
 links:
-  Website: http://colorify.tuurdutoit.be
+  Website: http://tuurdutoit.be/colorify
   GitHub: https://github.com/TuurDutoit/colorify
 ---
 
@@ -21,13 +21,13 @@ The idea was actually a funny coincidence; I made a nice list of all the parts t
 So, I got the idea to make a fun little website that would transform text into several hex colors, like the video above explains. 1 day later, colorify was finished, and this is what it looks like:
 
 ![The input field](input.jpg)
-This is the main input field; type some text, hit enter and be amazed!
+*This is the main input field; type some text, hit enter and be amazed!*
 
 ![The colors](preview.jpg)
-This is the colors view; this is (obviously) the heart of it all. Click any color to see its hex code.
+*This is the colors view; this is (obviously) the heart of it all. Click any color to see its hex code.*
 
 ![The about page](about.jpg)
-Just the about page. Nothing fancy here.
+*Just the about page. Nothing fancy here.*
 
 
 ## Technologies used

@@ -3,7 +3,7 @@ title: Major 1 - Family Pride
 template: article.jade
 intro: For my very first Major assignment, I had to design and develop a website about my surname, explaining where it comes from, what it stands for and who my family consists of.
 links:
-  Live website: http://static.tuurdutoit.be/name
+  Live website: http://tuurdutoit.be/major/name
   GitHub: https://github.com/TuurDutoit/major-1-dutoit
 ---
 

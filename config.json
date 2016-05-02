@@ -8,6 +8,7 @@
     "links": {
       "Home": "/",
       "Projects": "/projects/",
+      "Photography": "/photography/",
       "Blog": "http://tuurdutoit.tumblr.com"
     },
     "socials": {
@@ -19,7 +20,8 @@
   },
   "ignore": ["**/.DS_Store", "**/_*"],
   "plugins": [
-    "wintersmith-autoprefixer-less"
+    "wintersmith-autoprefixer-less",
+    "./plugins/respim"
   ],
   "require": {
     "Path": "path"
@@ -32,5 +34,21 @@
     "smartypants": true,
     "gfm": true
   },
-  "autoprefix": ["last 3 versions"]
+  "autoprefix": ["last 3 versions"],
+  "respim": {
+    "rules": {
+      "preview": {
+        "src": ["projects/*/preview.jpg", "projects/abhotw/home.jpg"],
+        "dest": "%n@xs%e",
+        "width": "300px",
+        "height": "200px",
+        "sizeMode": "cover"
+      },
+      "photography": {
+        "src": "photography/*/*.JPG",
+        "dest": "%n@medium%e",
+        "width": "600px"
+      }
+    }
+  }
 }

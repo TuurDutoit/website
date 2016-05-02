@@ -3,7 +3,7 @@ title: Major 2 - My Restaurant
 template: article.jade
 intro: For the second Major, we had to think of a new restaurant concept and make a website for it.
 links:
-  Live website: http://static.tuurdutoit.be/major/restaurant
+  Live website: http://tuurdutoit.be/major/restaurant
   GitHub: https://github.com/TuurDutoit/major2
 ---
 
