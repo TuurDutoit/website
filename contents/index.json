@@ -3,7 +3,7 @@
   "template": "index.jade",
   "props": {
     "Name": "Tuur Dutoit",
-    "Age": 18,
+    "Age": "<span id='age'>19</span><script type='text/javascript'>document.querySelector('#age').textContent = new Date(new Date() - new Date(1997, 3, 1)).getFullYear() - 1970</script>",
     "Date of birth": "01 apr. 1997",
     "Nationality": "Belgian (Leuven)",
     "Languages": "Dutch, French, English<br />HTML, CSS, JavaScript"

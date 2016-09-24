@@ -1,17 +1,72 @@
 include ./card.jade
 extends ./layout.jade
 
+
 block page
+  -
+    function getDirs(curr, dir) {
+      var path = dir.split("/");
+      for(var i = 0, len = path.length; i < len; i++) {
+        var part = path[i];
+        if(curr[part]) {
+          curr = curr[part];
+        }
+        else {
+          return {};
+        }
+      }
+      
+      return curr;
+    }
+    
+    function sortDirs(dirs) {
+      var names = Object.keys(dirs);
+      
+      names.forEach(function(name) {
+        var dir = dirs[name];
+        dir.article = dir["index.md"] || dir["index.json"];
+      });
+      var validDirs = names.filter(function(name) {
+        var dir = dirs[name];
+        return !!dir.article;
+      });
+      
+      var dirsWithDate = [];
+      var dirsWithoutDate = [];
+      validDirs.forEach(function(name) {
+        if(dirs[name].article.metadata.date) {
+          dirsWithDate.push(name);
+        }
+        else {
+          dirsWithoutDate.push(name);
+        }
+      });
+      
+      dirsWithDate.sort(function(a, b) {
+        return dirs[a].date - dirs[b].date;
+      });
+      
+      return dirsWithDate.concat(dirsWithoutDate);
+    }
+    
+    var base = page.metadata.dir
+    var dirs = getDirs(contents, base)
+    var sorted = sortDirs(dirs);
+    var index = dirs["index.md"] || dirs["index.json"];
+    var intro = index && index.metadata.intro;
+    
   .content.content-cards
+    if(intro)
+      .intro
+        != intro
     .main.cards
-      - var dirname = page.metadata.dir
-      each files, name in contents[dirname]
-        - var dir = name + "/"
-        - var article = files["index.md"]
+      each files, name in dirs
+        - var dirname = "/" + base + "/" + name + "/"
+        - var article = files["index.md"] || files["index.json"]
         if article
           - var intro = article.metadata.intro || article.intro
           - var img = article.metadata.img;
-          - var image = img ? dir+img : (files["preview.jpg"] && dir+"preview@xs.jpg")
-          +card(name, article.title, intro, image)
+          - var image = img ? dirname+img : (files["preview.jpg"] && dirname+"preview@xs.jpg")
+          +card(dirname, article.title, intro, image)
     include ./sidebar.jade
     include ./footer.jade
