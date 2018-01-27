@@ -1,7 +1,7 @@
 mixin card(href, title, content, img)
-  a.card(href=href)
+  a.card(href=urlFor(href))
     if img
-      .card-bg(style="background-image:url('#{img}')")
+      .card-bg(style="background-image:url('#{urlFor(img)}')")
         .effects
     h1= title
     .card-content !{content}

@@ -8,7 +8,7 @@ block main
         ul
           each url, name in page.metadata.links
             li
-              a(href=url)= name
+              a(href=urlFor(url))= name
     .article
       != page.html
       if page.metadata.links
@@ -16,4 +16,4 @@ block main
         ul
           each url, name in page.metadata.links
             li
-              a(href=url)= name
+              a(href=urlFor(url))= name

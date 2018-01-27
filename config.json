@@ -8,12 +8,11 @@
     "links": {
       "Home": "/",
       "Projects": "/projects/",
-      "Resume": "https://docs.google.com/document/d/1rfjvPLT1kr-HqGkW-GHk8b2vHS-dbc7ccc4imNuD6p8/edit?usp=sharing"
+      "Resume": "/resume/"
     },
     "socials": {
       "GitHub": "https://github.com/TuurDutoit",
       "LinkedIn": "https://www.linkedin.com/in/tuur-dutoit",
-      "Twitter": "https://twitter.com/ArthurMansard",
       "Mail": "mailto:me@tuurdutoit.be"
     }
   },

@@ -6,9 +6,9 @@ aside.sidebar.card
         each url, name in locals.links
           unless url === page.url
             li
-              a(href=url)= name
+              a(href=urlFor(url))= name
     .sidebar-socials
       ul
         each url, name in locals.socials
           li
-            a(href=url)= name
+            a(href=urlFor(url))= name

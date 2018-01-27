@@ -1,3 +1,8 @@
+- var Rurl = /^mailto:|^[a-z]+:\/\//i
+- function isUrl(path) { return path.match(Rurl); }
+- function fixTrailingSlash(orig, url) { return ((orig.slice(-1) !== url.slice(-1)) ? (url + orig.slice(-1)) : url); }
+- function urlFor(path) { return isUrl(path) ? path : fixTrailingSlash(path, Path.relative(page.getUrl(), path)); }
+
 doctype html
 html(lang="en")
   head
