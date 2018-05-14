@@ -8,7 +8,7 @@ links:
 ---
 
 ## What is colorify?
-For an answer to that question, I redirect you to [the website's about page](http://colorify.tuurdutoit.be#about). Everything is explained in great detail there.
+For an answer to that question, I redirect you to [the website's about page](http://tuurdutoit.be/colorify#about). Everything is explained in great detail there.
 
 ## Why?
 Now, __that__ is not explained on the about page, just because it's outside its scope.  
