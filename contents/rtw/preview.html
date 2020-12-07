@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Record-to-Web Preview</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="jumbotron container">
+      <h1 class="display-4">Record-to-Web Preview</h1>
+      <p class="lead">Test your Record-to-Web setup.</p>
+      <hr class="my-4" />
+      <form>
+        <div class="form-group">
+          <label for="site-url">Site URL</label>
+          <input
+            type="text"
+            class="form-control"
+            id="site-url"
+            name="site-url"
+            aria-describedby="site-url-help"
+          />
+          <small id="site-url-help" class="form-text text-muted">
+            Can be found under Setup > Sites > Site URL
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="object-name">Object name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="object-name"
+            name="object-name"
+            aria-describedby="object-name-help"
+          />
+          <small id="object-name-help" class="form-text text-muted">
+            Developer name of the object to preview, e.g. Account
+          </small>
+        </div>
+        <button type="submit" class="btn btn-primary">Preview</button>
+      </form>
+    </div>
+    <div id="preview" class="container"></div>
+    <script>
+      const params = getUrlParams();
+      const siteUrl = params["site-url"];
+      const objectName = params["object-name"];
+
+      if (siteUrl && objectName) {
+        showPreview(siteUrl, objectName);
+      }
+
+      function getUrlParams() {
+        const parts = location.search
+          .slice(1)
+          .split("&")
+          .map((param) => param.split("=").map(decodeURIComponent));
+        return Object.fromEntries(parts);
+      }
+
+      function showPreview(siteUrl, objectName) {
+        const id = `rtw-${Math.random().toString().slice(2)}`;
+        const $container = document.getElementById("preview");
+
+        const $iframe = document.createElement("iframe");
+        $iframe.setAttribute(
+          "src",
+          `${siteUrl}/apex/Iframe?object=${objectName}&align=center`
+        );
+        $iframe.setAttribute("id", id);
+        $iframe.setAttribute("frameborder", "0");
+        $iframe.setAttribute("allowtransparency", true);
+        $iframe.setAttribute("style", "width: 100%;");
+        $container.appendChild($iframe);
+
+        const $script = document.createElement("script");
+        $script.textContent = `(function(){var iframe = document.getElementById("${id}");if(!iframe){console.error("Record-to-Web iframe not found.");return;}var rh = /^rtw:height:(\\d+)$/;function onMessage(e){console.log(e, typeof e.data === "string", rh, e.data.match(rh), iframe);var m;if(e && typeof e.data === "string" && (m = e.data.match(rh)) && m[1] && iframe){iframe.height = m[1];}};window.addEventListener("message",onMessage);iframe.addEventListener("message", onMessage)})();`;
+        $container.appendChild($script);
+      }
+    </script>
+  </body>
+</html>
