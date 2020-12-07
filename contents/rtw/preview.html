@@ -54,6 +54,7 @@
 
       if (siteUrl && objectName) {
         showPreview(siteUrl, objectName);
+        fill(siteUrl, objectName);
       }
 
       function getUrlParams() {
@@ -82,6 +83,11 @@
         const $script = document.createElement("script");
         $script.textContent = `(function(){var iframe = document.getElementById("${id}");if(!iframe){console.error("Record-to-Web iframe not found.");return;}var rh = /^rtw:height:(\\d+)$/;function onMessage(e){console.log(e, typeof e.data === "string", rh, e.data.match(rh), iframe);var m;if(e && typeof e.data === "string" && (m = e.data.match(rh)) && m[1] && iframe){iframe.height = m[1];}};window.addEventListener("message",onMessage);iframe.addEventListener("message", onMessage)})();`;
         $container.appendChild($script);
+      }
+
+      function fill(siteUrl, objectName) {
+        document.getElementById("site-url").value = siteUrl;
+        document.getElementById("object-name").value = objectName;
       }
     </script>
   </body>
