@@ -70,9 +70,10 @@
         const $container = document.getElementById("preview");
 
         const $iframe = document.createElement("iframe");
+        const src = siteUrl.replace("http://", "https://");
         $iframe.setAttribute(
           "src",
-          `${siteUrl}/apex/Iframe?object=${objectName}&align=center`
+          `${src}/apex/Iframe?object=${objectName}&align=center`
         );
         $iframe.setAttribute("id", id);
         $iframe.setAttribute("frameborder", "0");
