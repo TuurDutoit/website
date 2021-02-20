@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Record-to-Web - Webcode Test</title>
+  </head>
+  <body>
+    <h1>Webcode Test</h1>
+    <iframe
+      src="http://rtw4-developer-edition.eu40.force.com/rtw/apex/rtw_test_alpha__Iframe?object=Product2&fields=Id+Name+ProductCode+Description&cardBackground=%2309e8eA"
+      id="rtw-769350978466175"
+      frameborder="0"
+      allowtransparency="true"
+      style="width: 100%"
+    ></iframe>
+    <script type="text/javascript">
+      (function () {
+        var iframe = document.getElementById("rtw-769350978466175");
+        if (!iframe) {
+          console.error("Record-to-Web iframe not found.");
+          return;
+        }
+        var rh = /^rtw:height:(\d+)$/;
+        window.addEventListener("message", function (e) {
+          var m;
+          if (
+            e &&
+            typeof e.data === "string" &&
+            (m = e.data.match(rh)) &&
+            m[1] &&
+            iframe
+          ) {
+            iframe.height = m[1];
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
