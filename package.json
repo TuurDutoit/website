@@ -2,7 +2,7 @@
   "dependencies": {
     "gm": "^1.21.1",
     "image-size": "^0.4.0",
-    "wintersmith": "^2.2.5",
+    "wintersmith": "^2.5.0",
     "wintersmith-autoprefixer-less": "0.0.1"
   },
   "private": "true",
